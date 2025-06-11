@@ -4,3 +4,7 @@ from pathlib import Path
 @dataclass
 class DataIngestionArtifact:
     raw_data_path: Path
+
+@dataclass
+class DataValidationArtifact:
+    validation_status: bool

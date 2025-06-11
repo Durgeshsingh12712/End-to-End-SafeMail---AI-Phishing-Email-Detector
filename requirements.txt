@@ -3,13 +3,11 @@ pandas
 matplotlib
 seaborn
 scikit-learn
-nltk
 flask
 pytest
 python-box
 ensure
 joblib
 types-PyYAML
-scipy
 
 -e .

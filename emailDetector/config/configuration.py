@@ -1,7 +1,10 @@
 import sys
 from emailDetector.constants.constants import *
 from emailDetector.utils.utils import read_yaml, create_directories
-from emailDetector.entity.config_entity import DataIngestionConfig
+from emailDetector.entity.config_entity import (
+    DataIngestionConfig,
+    DataValidationConfig
+)
 from emailDetector.exception.exception import EmailDetectionException
 
 class ConfigurationManager:
@@ -29,4 +32,17 @@ class ConfigurationManager:
         except Exception as e:
             raise EmailDetectionException(e, sys)
         
-        
+    def get_data_validation_config(self) -> DataValidationConfig:
+        try:
+            config = self.config.data_validation
+            create_directories([config.root_dir])
+            
+            data_validation_config = DataValidationConfig(
+                root_dir=config.root_dir,
+                unzip_data_dir=config.unzip_data_dir,
+                status_file=config.status_file,
+                required_columns=config.required_columns
+            )
+            return data_validation_config
+        except Exception as e:
+            raise EmailDetectionException(e, sys)

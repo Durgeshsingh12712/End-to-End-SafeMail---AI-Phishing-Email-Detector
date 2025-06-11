@@ -8,3 +8,10 @@ class DataIngestionConfig:
     local_data_file: Path
     unzip_dir: Path
     raw_data_path: Path
+
+@dataclass(frozen=True)
+class DataValidationConfig:
+    root_dir: Path
+    unzip_data_dir: Path
+    status_file: Path
+    required_columns: list
