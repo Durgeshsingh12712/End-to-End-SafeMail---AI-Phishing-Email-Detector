@@ -15,3 +15,14 @@ class DataValidationConfig:
     unzip_data_dir: Path
     status_file: Path
     required_columns: list
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    data_path: Path
+    train_data_path: Path
+    test_data_path: Path
+    vectorizer_path: Path
+    test_size: float
+    random_state: int
+    

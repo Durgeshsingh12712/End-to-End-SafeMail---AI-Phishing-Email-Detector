@@ -8,3 +8,10 @@ class DataIngestionArtifact:
 @dataclass
 class DataValidationArtifact:
     validation_status: bool
+
+@dataclass
+class DataTransformationArtifact:
+    train_data_path: Path
+    test_data_path: Path
+    vectorizer_path: Path
+    

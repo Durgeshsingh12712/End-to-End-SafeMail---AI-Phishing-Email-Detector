@@ -12,3 +12,12 @@ data_validation:
   unzip_data_dir: artifacts/data_ingestion
   status_file: artifacts/data_validation/status.txt
   required_columns: ["Category"]
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/email.csv
+  train_data_path: artifacts/data_transformation/train.csv
+  test_data_path: artifacts/data_transformation/test.csv
+  vectorizer_path: artifacts/data_transformation/vectorizer.pkl
+  test_size: 0.2
+  random_state: 42                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 

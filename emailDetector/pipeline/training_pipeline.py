@@ -4,6 +4,7 @@ from emailDetector.exception.exception import EmailDetectionException
 
 from emailDetector.components.data_ingestion import DataIngestion
 from emailDetector.components.data_validation import DataValidation
+from emailDetector.components.data_transformation import DataTransformation
 
 from emailDetector.config.configuration import ConfigurationManager
 
@@ -31,6 +32,14 @@ class TrainingPipeline:
             data_validation_artifact = data_validation.initiate_data_validation()
             print(data_validation_artifact)
             logger.info(">>>>>> Stage 02: Data Validation Completed <<<<<<")
+
+            # Data Transformaion
+            logger.info(">>>>>>> Stage 03 : Data Transformation <<<<<<<")
+            data_transformation_config = config_manager.get_data_transformation_config()
+            data_transformation = DataTransformation(config=data_transformation_config)
+            data_transformation_artifact = data_transformation.initiate_data_transformation()
+            print(data_transformation_artifact)
+            logger.info(">>>>>>> Stage 03 : Data Transformation Completed <<<<<<<")
 
 
         except Exception as e:
