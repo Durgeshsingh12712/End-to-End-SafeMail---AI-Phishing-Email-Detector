@@ -72,15 +72,15 @@ Batch Processing: Support for multiple email classification
 
 📊 Key Features:
 
-Real-time Predictions: Instant spam/ham classification
+Real-time Predictions: Instant Phishing/Safe classification
 Confidence Scores: Probability-based confidence metrics
 Comprehensive Metrics: Accuracy, Precision, Recall, F1-Score, Specificity
 Confusion Matrix: Visual representation of model performance
-Example Templates: Pre-built spam/ham examples for testing
+Example Templates: Pre-built Phishing/Safe examples for testing
 
 🛠️ Technical Highlights:
 
-Scikit-learn: TF-IDF vectorization and Logistic Regression
+Scikit-learn: TF-IDF vectorization and MultinomialNB
 Production Ready: Proper error handling, logging, and configuration
 Scalable: Modular design allows easy extension
 API Integration: REST endpoints for external integration
