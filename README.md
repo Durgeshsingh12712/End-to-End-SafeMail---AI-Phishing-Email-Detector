@@ -1,5 +1,6 @@
 # End-to-End-SafeMail---AI-Phishing-Email-Detector
 
+```bash
 Safe_&_Phishing_email_classifier/
 ├── config/
 │   └── config.yaml
@@ -41,7 +42,7 @@ Safe_&_Phishing_email_classifier/
 ├── setup.py
 ├── main.py
 └── app.py
-
+```
 
 🏗️ Architecture:
 
