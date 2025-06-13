@@ -6,6 +6,7 @@ from emailDetector.components.data_ingestion import DataIngestion
 from emailDetector.components.data_validation import DataValidation
 from emailDetector.components.data_transformation import DataTransformation
 from emailDetector.components.model_trainer import ModelTrainer
+from emailDetector.components.model_evaluation import ModelEvaluation
 
 from emailDetector.config.configuration import ConfigurationManager
 
@@ -49,6 +50,16 @@ class TrainingPipeline:
             model_trainer_artifact = model_trainer.train()
             print(model_trainer_artifact)
             logger.info(">>>>>>> Stage 04 : Model Trainer Completed <<<<<<<<")
+
+            # Model Evaluation
+            logger.info(">>>>>>> Stage 05 : Model Evaluation <<<<<<<")
+            model_evaluation_config = config_manager.get_model_evaluation_config()
+            model_evaluation = ModelEvaluation(config=model_evaluation_config)
+            model_evaluation_artifact = model_evaluation.evaluate_model()
+            print(model_evaluation_artifact)
+            logger.info(">>>>>>> Stage 0 : Model Evaluation Completed Successfully <<<<<<<")
+
+            logger.info(">>>>>>> Training Pipeline Completed Successfully <<<<<<<")
 
 
         except Exception as e:

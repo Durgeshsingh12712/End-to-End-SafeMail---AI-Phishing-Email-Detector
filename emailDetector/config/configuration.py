@@ -5,7 +5,8 @@ from emailDetector.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
     DataTransformationConfig,
-    ModelTrainerConfig
+    ModelTrainerConfig,
+    ModelEvaluationConfig
 )
 from emailDetector.exception.exception import EmailDetectionException
 
@@ -82,6 +83,23 @@ class ConfigurationManager:
                 target_column=config.target_column
             )
             return model_trainer_config
+        
+        except Exception as e:
+            raise EmailDetectionException(e, sys)
+        
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        try:
+            config = self.config.model_evaluation
+            create_directories([config.root_dir])
+
+            model_evalauation_config = ModelEvaluationConfig(
+                root_dir=config.root_dir,
+                test_data_path=config.test_data_path,
+                vectorizer_path=config.vectorizer_path,
+                model_path=config.model_path,
+                metric_file_name=config.metric_file_name
+            )
+            return model_evalauation_config
         
         except Exception as e:
             raise EmailDetectionException(e, sys)
