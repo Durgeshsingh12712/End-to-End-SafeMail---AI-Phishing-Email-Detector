@@ -1,5 +1,5 @@
 # End-to-End-SafeMail---AI-Phishing-Email-Detector
-``` bash 
+
 Safe_&_Phishing_email_classifier/
 ├── config/
 │   └── config.yaml
@@ -42,8 +42,7 @@ Safe_&_Phishing_email_classifier/
 ├── main.py
 └── app.py
 
-```
-``` bash
+
 🏗️ Architecture:
 
 Modular Design: Separated into components, configure, entities, constants, exceptions, logging,  utils, and pipelines
@@ -85,4 +84,3 @@ Production Ready: Proper error handling, logging, and configuration
 Scalable: Modular design allows easy extension
 API Integration: REST endpoints for external integration
 
-```
