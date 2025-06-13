@@ -15,3 +15,6 @@ class DataTransformationArtifact:
     test_data_path: Path
     vectorizer_path: Path
     
+@dataclass
+class ModelTrainerArtifact:
+    trained_model_path: Path

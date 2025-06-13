@@ -26,3 +26,11 @@ class DataTransformationConfig:
     test_size: float
     random_state: int
     
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    train_data_path: Path
+    test_data_path: Path
+    vectorizer_path: Path
+    model_name: str
+    target_column: str

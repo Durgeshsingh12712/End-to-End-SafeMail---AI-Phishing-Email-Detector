@@ -4,7 +4,8 @@ from emailDetector.utils.utils import read_yaml, create_directories
 from emailDetector.entity.config_entity import (
     DataIngestionConfig,
     DataValidationConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    ModelTrainerConfig
 )
 from emailDetector.exception.exception import EmailDetectionException
 
@@ -66,3 +67,21 @@ class ConfigurationManager:
         except Exception as e:
             raise EmailDetectionException(e, sys)
         
+
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        try:
+            config = self.config.model_trainer
+            create_directories([config.root_dir])
+
+            model_trainer_config = ModelTrainerConfig(
+                root_dir=config.root_dir,
+                train_data_path=config.train_data_path,
+                test_data_path=config.test_data_path,
+                vectorizer_path=config.vectorizer_path,
+                model_name=config.model_name,
+                target_column=config.target_column
+            )
+            return model_trainer_config
+        
+        except Exception as e:
+            raise EmailDetectionException(e, sys)
