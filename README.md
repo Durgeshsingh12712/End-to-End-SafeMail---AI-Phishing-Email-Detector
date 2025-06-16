@@ -85,7 +85,6 @@ Production Ready: Proper error handling, logging, and configuration
 Scalable: Modular design allows easy extension
 API Integration: REST endpoints for external integration
 
-381509086193.dkr.ecr.us-east-1.amazonaws.com/safemail
 
 # Push Model to AWS
 
@@ -108,7 +107,7 @@ API Integration: REST endpoints for external integration
 
 
 # 3.Create ECR repo to store/save docker image
-- save the URI: ```381509086193.dkr.ecr.us-east-1.amazonaws.com/networksecurity ```
+- save the URI: ```381509086193.dkr.ecr.us-east-1.amazonaws.com/safemail ```
 
 Note: Do the port mapping to this port:- 8501
 
