@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Phishing Detection</title>
+    <link rel="stylesheet" href="static/index/style.css"/>
+    <style></style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Email Phishing Detection</h1>
+            <p>Advanced AI-powered email security analysis</p>
+        </div>
+
+        <div class="main-content">
+            <div class="detection-panel">
+                <form id="emailForm">
+                    <div class="form-group">
+                        <label for="emailText">📧 Paste Email Content</label>
+                        <textarea 
+                            id="emailText" 
+                            name="email_text" 
+                            class="email-input" 
+                            placeholder="Paste the suspicious email content here...&#10;&#10;Include headers, body, and any suspicious links or attachments mentioned."
+                            required
+                            aria-label="Email content to analyze"
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="check-button" id="checkButton">
+                        🔍 Analyze Email Security
+                    </button>
+                </form>
+
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing email content...</p>
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+
+            <div class="info-panel">
+                <h3>🔒 Security Information</h3>
+                <div class="info-item">
+                    <h4>What is Phishing?</h4>
+                    <p>Phishing is a cybercrime where attackers impersonate legitimate entities to steal sensitive information like passwords, credit card details, or personal data.</p>
+                </div>
+                <div class="info-item">
+                    <h4>How It Works</h4>
+                    <p>Our AI model analyzes email content using machine learning to identify suspicious patterns, language, and characteristics commonly found in phishing attempts.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Privacy First</h4>
+                    <p>Your email content is processed in real-time and never stored or logged. All analysis happens securely without data retention.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Stay Safe</h4>
+                    <p>Always verify suspicious emails through official channels. When in doubt, contact the sender directly using known contact information.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-section" id="resultSection">
+            <h3 class="result-title">🎯 Analysis Results</h3>
+            <div class="prediction-result">
+                <div class="prediction-badge" id="predictionBadge"></div>
+                <div class="confidence-meter">
+                    <div class="confidence-label">Confidence Level: <span id="confidenceText"></span></div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" id="confidenceFill"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="resultExplanation"></div>
+        </div>
+    </div>
+
+    <script src="../static/index/script.js"></script>
+</body>
+</html>

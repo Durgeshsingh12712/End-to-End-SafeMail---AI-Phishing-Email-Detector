@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Analysis Result - Phishing Detection</title>
+    <link rel="stylesheet" href="static/result/style.css"/>
+    <style></style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Email Analysis Complete</h1>
+        </div>
+
+        <div class="result-container">
+            <div class="prediction-header">
+                {% if prediction.lower() == 'phishing' %}
+                    <div class="prediction-badge prediction-phishing">⚠️ Phishing Detected</div>
+                {% else %}
+                    <div class="prediction-badge prediction-safe">✅ Safe Email</div>
+                {% endif %}
+                
+                <div class="confidence-section">
+                    <div class="confidence-label">Confidence Level</div>
+                    <div class="confidence-bar">
+                        <div class="confidence-fill" style="--confidence-width: {{ (confidence|float * 100)|round }}%; --width: {{ (confidence|float * 100)|round }}%;"></div>
+                    </div>
+                    <div class="confidence-text">{{ (confidence|float * 100)|round }}%</div>
+                </div>
+            </div>
+
+            <div class="email-preview">
+                <h3>📧 Analyzed Email Content</h3>
+                <div class="email-content">{{ text }}</div>
+            </div>
+
+            <div class="explanation-section">
+                <h3>🎯 Analysis Results</h3>
+                
+                {% if prediction.lower() == 'phishing' %}
+                    <div class="warning-box">
+                        <h4 style="color: #ff6b6b; margin-bottom: 10px;">⚠️ Security Alert</h4>
+                        <p>This email shows characteristics commonly associated with phishing attempts. Our AI model has identified patterns that suggest this email may be attempting to steal sensitive information or compromise your security.</p>
+                    </div>
+                    
+                    <h4 style="color: #ffff00; margin: 20px 0 10px 0;">🚨 Immediate Actions Required:</h4>
+                    <ul style="margin-left: 20px; color: rgba(255, 255, 255, 0.9);">
+                        <li style="margin-bottom: 8px;">Do NOT click any links or download attachments from this email</li>
+                        <li style="margin-bottom: 8px;">Do NOT provide any personal information, passwords, or financial details</li>
+                        <li style="margin-bottom: 8px;">Verify the sender's identity through official channels (phone, official website)</li>
+                        <li style="margin-bottom: 8px;">Report this email to your IT security team or email provider</li>
+                        <li style="margin-bottom: 8px;">Delete the email after reporting it</li>
+                    </ul>
+                {% else %}
+                    <div class="safe-box">
+                        <h4 style="color: #4ade80; margin-bottom: 10px;">✅ Email Appears Safe</h4>
+                        <p>Our analysis indicates this email shows characteristics of legitimate communication. However, always remain vigilant and trust your instincts when dealing with unexpected requests.</p>
+                    </div>
+                    
+                    <h4 style="color: #00ffff; margin: 20px 0 10px 0;">💡 General Safety Reminders:</h4>
+                    <ul style="margin-left: 20px; color: rgba(255, 255, 255, 0.9);">
+                        <li style="margin-bottom: 8px;">Still verify any unexpected requests for sensitive information</li>
+                        <li style="margin-bottom: 8px;">Hover over links to preview URLs before clicking</li>
+                        <li style="margin-bottom: 8px;">Be cautious with urgent requests for immediate action</li>
+                        <li style="margin-bottom: 8px;">Keep your security software and browser updated</li>
+                        <li style="margin-bottom: 8px;">When in doubt, contact the sender through known official channels</li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="tips-section">
+            <h3>🔐 Email Security Best Practices</h3>
+            <ul>
+                <li>Always verify unexpected emails from financial institutions, government agencies, or service providers</li>
+                <li>Look for spelling errors, urgent language, and requests for immediate action - common phishing tactics</li>
+                <li>Check sender email addresses carefully - phishers often use similar-looking domains</li>
+                <li>Use two-factor authentication wherever possible to add an extra layer of security</li>
+                <li>Keep your email client and antivirus software updated</li>
+                <li>Report suspected phishing attempts to help protect others</li>
+                <li>Trust your instincts - if something feels suspicious, it probably is</li>
+            </ul>
+        </div>
+
+        <div class="action-buttons">
+            <a href="/" class="btn btn-primary">🔍 Analyze Another Email</a>
+            <button onclick="window.print()" class="btn btn-secondary">🖨️ Save Results</button>
+        </div>
+    </div>
+
+    <script src="../static/result/script.js"></script>
+</body>
+</html>
