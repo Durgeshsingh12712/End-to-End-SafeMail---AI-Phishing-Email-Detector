@@ -4,13 +4,20 @@ matplotlib
 seaborn
 scikit-learn
 flask
+pytestnumpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+flask
 pytest
 python-box
 ensure
 joblib
 types-PyYAML
+scipy
 
--e ...........................................
+-e .
 
 
                                                                                                                                                                                                                                                                                                                                    
