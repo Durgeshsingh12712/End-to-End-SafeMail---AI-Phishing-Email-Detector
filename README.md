@@ -107,7 +107,7 @@ API Integration: REST endpoints for external integration
 ```
 
 # 3.Create ECR repo to store/save docker image
-- save the URI: ```381509086193.dkr.ecr.us-east-1.amazonaws.com/safemail ```
+- save the URI: ``` 381509086193.dkr.ecr.us-east-1.amazonaws.com/safemail ```
 
 Note: Do the port mapping to this port:- 8501
 
