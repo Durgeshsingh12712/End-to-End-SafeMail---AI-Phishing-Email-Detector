@@ -85,7 +85,7 @@ Production Ready: Proper error handling, logging, and configuration
 Scalable: Modular design allows easy extension
 API Integration: REST endpoints for external integration
 
-
+```bash
 # Push Model to AWS
 
 ## 1. Login to AWS console.
@@ -104,7 +104,7 @@ API Integration: REST endpoints for external integration
 
     Run the following command on EC2 machine
 
-
+```
 
 # 3.Create ECR repo to store/save docker image
 - save the URI: ```381509086193.dkr.ecr.us-east-1.amazonaws.com/safemail ```
