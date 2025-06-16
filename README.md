@@ -85,3 +85,84 @@ Production Ready: Proper error handling, logging, and configuration
 Scalable: Modular design allows easy extension
 API Integration: REST endpoints for external integration
 
+381509086193.dkr.ecr.us-east-1.amazonaws.com/safemail
+
+# Push Model to AWS
+
+## 1. Login to AWS console.
+
+## 2. Create IAM user for deployment
+
+#    Create IAM user with AdministratorAccess
+#	 with specific access
+
+	1. EC2 access : It is virtual machine
+
+    Create EC2 machine (Ubuntu) & add Security groups 5000 port
+
+	2. ECR: Elastic Container registry to save your docker image in aws
+
+
+    Run the following command on EC2 machine
+
+
+
+# 3.Create ECR repo to store/save docker image
+- save the URI: ```381509086193.dkr.ecr.us-east-1.amazonaws.com/networksecurity ```
+
+Note: Do the port mapping to this port:- 8501
+
+```bash
+sudo apt-get update -y
+
+sudo apt-get upgrade
+
+#Install Docker
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+```
+
+
+### 4. If AWS cli config failed
+
+```bash
+
+sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+sudo apt update
+
+sudo apt install unzip
+
+sudo unzip awscliv2.zip
+
+sudo ./aws/install
+
+```
+
+## AWS
+```bash
+aws configure
+```
+
+# 5. Configure EC2 as self-hosted runner:
+    setting>actions>runner>new self hosted runner> choose os> then run command one by one
+
+# 6. Setup github secrets:
+```bash
+AWS_ACCESS_KEY_ID
+
+AWS_SECRET_ACCESS_KEY
+
+AWS_REGION 
+
+AWS_ECR_LOGIN_URI
+
+ECR_REPOSITORY_NAME
+
+```
