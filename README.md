@@ -104,51 +104,6 @@ API Integration: REST endpoints for external integration
 
     Run the following command on EC2 machine
 
-```
-
-# 3.Create ECR repo to store/save docker image
-- save the URI: ``` 381509086193.dkr.ecr.us-east-1.amazonaws.com/safemail ```
-
-Note: Do the port mapping to this port:- 8501
-
-```bash
-sudo apt-get update -y
-
-sudo apt-get upgrade
-
-#Install Docker
-
-curl -fsSL https://get.docker.com -o get-docker.sh
-
-sudo sh get-docker.sh
-
-sudo usermod -aG docker ubuntu
-
-newgrp docker
-```
-
-
-### 4. If AWS cli config failed
-
-```bash
-
-sudo curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-
-sudo apt update
-
-sudo apt install unzip
-
-sudo unzip awscliv2.zip
-
-sudo ./aws/install
-
-```
-
-## AWS
-```bash
-aws configure
-```
-
 ```bash
 
 nginx
@@ -158,13 +113,7 @@ sudo apt install nginx -y
 sudo systemctl start nginx
 sudo systemctl enable nginx
 
-```
 
-# 5. Configure EC2 as self-hosted runner:
-    setting>actions>runner>new self hosted runner> choose os> then run command one by one
-
-# 6. Setup github secrets:
-```bash
 AWS_ACCESS_KEY_ID
 
 AWS_SECRET_ACCESS_KEY
@@ -177,4 +126,10 @@ ECR_REPOSITORY_NAME
 
 ```
 
-Image
+```bash
+Youtube Link :- https://www.youtube.com/watch?v=80famvjUhs4
+
+LinkDin Link :- https://www.linkedin.com/posts/durgesh-singh-88822b348_architecture-modular-design-separated-activity-7340661378925391872-0HFv?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFbjCSgBaozGJUzEI1yTGjoEXbiGQro18YU
+
+InstaGram Link :- https://www.instagram.com/reel/DK_tgd9z5qr/?igsh=NjZiM2M3MzIxNA%3D%3D
+```
