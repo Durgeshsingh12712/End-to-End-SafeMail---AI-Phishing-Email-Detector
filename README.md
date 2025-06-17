@@ -1,5 +1,8 @@
 # End-to-End-SafeMail---AI-Phishing-Email-Detector
 
+# UI
+![My Image]('https://github.com/Durgeshsingh12712/Data-All/blob/main/safe%20mail.png')
+
 ```bash
 Safe_&_Phishing_email_classifier/
 ├── config/
