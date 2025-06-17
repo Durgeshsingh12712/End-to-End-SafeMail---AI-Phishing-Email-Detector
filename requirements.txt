@@ -13,7 +13,7 @@ pytest
 python-box
 ensure
 joblib
-types-PyYAML
+PyYAML
 scipy
 
 -e .
